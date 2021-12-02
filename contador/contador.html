@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
+    <title>Super contador</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <H1>Tabuada</H1>
+        <H1>Vamos contar</H1>
     </header>
     <section>
-        <div>
-            <p>Numero: <input type="number" name="num" id="txtn">
-            <input type="button" value="Gerar tabuada" onclick="tabuada()"></p>
+        <div id="dados">
+            <p>Início: <input type="number" name="inicio" id="txti"></p>
+            <p>Fim: <input type="number" name="fim" id="txtf"></p>
+            <p>Passo: <input type="number" name="passo" id="txtp"></p>
+            <p><input type="buton" value="Contar" onclick="contar()"></p>
         </div>
-        <div>
-            <select name="tabuada" id="seltab" size="10">
-                <option>Digite um numero acima</option>
-            </select>
+        <div id="res">
+            Preparando a contagem...
         </div>
     </section>
     <footer>
