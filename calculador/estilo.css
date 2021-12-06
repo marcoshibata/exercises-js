@@ -1,9 +1,8 @@
 div#corpo{
     background-color: black;
-    height: 360px;
+    height: 380px;
     width: 220px;
     padding: 10px;
-    border-radius: 8%;
 }
 
 div#painel{
@@ -12,16 +11,18 @@ div#painel{
     height: 80px;
     width: 210px;
     margin: auto;
-    border-radius: 8%;
     margin-bottom: 10px;
 }
 p#soma{
     text-align: right;
     font-size: 10px;
+    height: 18px;
+    padding: 5px;
 }
 p#resultado{
     text-align: right;
-    font-size: 20px;
+    font-size: 25px;
+    padding: 1px;
 }
 button{
     background-color:rgb(39, 36, 36);
