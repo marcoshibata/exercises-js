@@ -1,0 +1,50 @@
+div#corpo{
+    background-color: black;
+    height: 360px;
+    width: 220px;
+    padding: 10px;
+    border-radius: 8%;
+}
+
+div#painel{
+    background-color:white;
+    color: green;
+    height: 80px;
+    width: 210px;
+    margin: auto;
+    border-radius: 8%;
+    margin-bottom: 10px;
+}
+p#soma{
+    text-align: right;
+    font-size: 10px;
+}
+p#resultado{
+    text-align: right;
+    font-size: 20px;
+}
+button{
+    background-color:rgb(39, 36, 36);
+    color: white;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+}
+
+button:hover{
+    background-color:green;
+}
+
+button#igual{
+    width: 104px;
+}
+
+button#mais{
+    height: 104px;
+}
+
+button#clear{
+    width: 158px;
+}
