@@ -10,37 +10,44 @@
 <body>
     <div id="corpo">
         <div id="painel">
-            <p id="elementos"></p>
             <p id="resultado"></p>
         </div>
 
         <table>
         <tr>
-            <td colspan="3"><button id="clear">c</button></td>
-            <td><button>/</button></td>
+            <td colspan="2"><button id="clear" onclick="limpar()">c</button></td>
+            <td><button onclick="voltar()"><</button></td>
+            <td><button onclick="inserir('/)">/</button></td>
         </tr>
         <tr>
-            <td><button>7</button></td>
-            <td><button>8</button></td>
-            <td><button>9</button></td>
-            <td><button>X</button></td>
+            <td><button onclick="inserir('7')">7</button></td>
+            <td><button onclick="inserir('8')">8</button></td>
+            <td><button onclick="inserir('9')">9</button></td>
+            <td><button onclick="inserir('*')">X</button></td>
+            
         </tr>
         <tr>
-            <td><button>4</button></td>
-            <td><button>5</button></td>
-            <td><button>6</button></td>
-            <td><button>-</button></td>
+            <td><button onclick="inserir('4')">4</button></td>
+            <td><button onclick="inserir('5')">5</button></td>
+            <td><button onclick="inserir('6')">6</button></td>
+            <td><button onclick="inserir('-')">-</button></td>
         </tr>
         <tr>
-            <td><button onclick="numero1()">1</button></td>
-            <td><button onclick="numero2()">2</button></td>
-            <td><button>3</button></td>
-            <td rowspan="2"><button id="mais" onclick="somar()">+</button></td>
+            <td><button onclick="inserir('1')">1</button></td>
+            <td><button onclick="inserir('2')">2</button></td>
+            <td><button onclick="inserir('3')">3</button></td>
+            <td><button onclick="inserir('+')">+</button></td>
         </tr>
+
         <tr>
-            <td><button>0</button></td>
+            <td><button onclick="inserir('0')"utton>0</button></td>
+            <td><button onclick="inserir('.')"on>.</button></td>
             <td colspan="2" ><button id="igual">=</button></td>
         </tr>
+       <!--
+            rowspan="2" junta 2 linhas
+            colspan="2" junta 2 colunas
+        -->
     </table>
     </div>
 </body>
