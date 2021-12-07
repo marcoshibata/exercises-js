@@ -12,8 +12,9 @@ div#painel{
     width: 210px;
     margin: auto;
     margin-bottom: 10px;
+    
 }
-p#soma{
+p#elementos{
     text-align: right;
     font-size: 10px;
     height: 18px;

@@ -10,8 +10,8 @@
 <body>
     <div id="corpo">
         <div id="painel">
-            <p id="soma">25+32+33+42+89+98+990+</p>
-            <p id="resultado">3056</p>
+            <p id="elementos"></p>
+            <p id="resultado"></p>
         </div>
 
         <table>
@@ -32,10 +32,10 @@
             <td><button>-</button></td>
         </tr>
         <tr>
-            <td><button>1</button></td>
-            <td><button>2</button></td>
+            <td><button onclick="numero1()">1</button></td>
+            <td><button onclick="numero2()">2</button></td>
             <td><button>3</button></td>
-            <td rowspan="2"><button id="mais">+</button></td>
+            <td rowspan="2"><button id="mais" onclick="somar()">+</button></td>
         </tr>
         <tr>
             <td><button>0</button></td>
@@ -44,4 +44,5 @@
     </table>
     </div>
 </body>
+<script src="script.js"></script>
 </html>
