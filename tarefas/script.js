@@ -4,13 +4,13 @@ let banco = [  // simulnado banco de dados
     {'tarefa':'Netflix','status':'checked'}
 ]
 
-const criarItem  = (tarefa, status) => {
+const criarItem  = (tarefa, status, indice) => {
     const item = document.createElement(`label`)
     item.classList.add(`todo__item`)
     item.innerHTML = `
-    <input type="checkbox" ${status}>
+    <input type="checkbox" ${status} data-indice = ${indice}>
     <div>${tarefa}</div>
-    <input type="button" value="x">
+    <input type="button" value="x" data-indice = ${indice}>
     `
     document.getElementById('todoList').appendChild(item)
 }
@@ -23,7 +23,7 @@ const limparTela = () => {
 }
 const atualizarTela = () => { // cada vez que banco for atualizado, atualiza a tela
     limparTela()
-    banco.forEach(item => criarItem(item.tarefa,item.status))
+    banco.forEach((item, indice) => criarItem(item.tarefa,item.status,indice))
 }
 
 const inserirItem = (evento) => {
@@ -32,9 +32,31 @@ const inserirItem = (evento) => {
     if ( tecla === 'Enter'){
         banco.push({'tarefa':texto,'status':''})
         atualizarTela()
-        evento.target.value = ''
+        evento.target.value = '' //limpa caixa de texto "Tafera"
     }
 }
+const removerItem = (indice) => {
+    banco.splice (indice,1)   //modifica array
+    atualizarTela()
+}
+
+const atualizarItem = (indice) => {
+    banco[indice].status = banco[indice].status === ''?'checked':''
+    atualizarTela()
+}
+
+const clickItem = (evento) => {
+    const elemento = evento.target
+    if(elemento.type === 'button'){
+        const indice = elemento.dataset.indice
+        removerItem(indice)
+    }else if (elemento.type === 'checkbox'){
+        const indice = elemento.dataset.indice
+        atualizarItem(indice)
+    }
+}
+
 document.getElementById('newItem').addEventListener('keypress',inserirItem)
+document.getElementById('todoList').addEventListener('click',clickItem)
 
 atualizarTela()
