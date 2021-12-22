@@ -1,8 +1,7 @@
 `use strict`;
-let banco = [  // simulnado banco de dados
-    {'tarefa':'Estudar','status':''},
-    {'tarefa':'Netflix','status':'checked'}
-]
+
+const getBanco = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
+const setBanco = (banco) => localStorage.setItem('todoList',JSON.stringify(banco))
 
 const criarItem  = (tarefa, status, indice) => {
     const item = document.createElement(`label`)
@@ -23,6 +22,7 @@ const limparTela = () => {
 }
 const atualizarTela = () => { // cada vez que banco for atualizado, atualiza a tela
     limparTela()
+    const banco = getBanco()
     banco.forEach((item, indice) => criarItem(item.tarefa,item.status,indice))
 }
 
@@ -30,18 +30,24 @@ const inserirItem = (evento) => {
     const tecla = evento.key
     const texto = evento.target.value
     if ( tecla === 'Enter'){
+        const  banco = getBanco()
         banco.push({'tarefa':texto,'status':''})
+        setBanco(banco)
         atualizarTela()
         evento.target.value = '' //limpa caixa de texto "Tafera"
     }
 }
 const removerItem = (indice) => {
+    const banco = getBanco()
     banco.splice (indice,1)   //modifica array
+    setBanco(banco)
     atualizarTela()
 }
 
 const atualizarItem = (indice) => {
+    const banco = getBanco()
     banco[indice].status = banco[indice].status === ''?'checked':''
+    setBanco(banco)
     atualizarTela()
 }
 
